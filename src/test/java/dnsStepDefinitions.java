@@ -4,6 +4,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import lesson8.LoginPage;
 
+
 public class dnsStepDefinitions {
     @Given("^Пользователь авторизован на сайте$")
     public void userAuthorized() {
@@ -17,12 +18,13 @@ public class dnsStepDefinitions {
 
     @When("^пользователь кликает в избранное товар$")
     public void userClikingOnFaforites() throws InterruptedException {
-        new LoginPage()
-                .chekBox();
+//        new LoginPage()
+//                .chekBox().subscribe("lucky");
+                new LoginPage().bButton();
     }
 
-//    @Then("^пользователь видит товар в избранном$")
-//    public void userLooksFavorites() {
-//        new LoginPage().chekFavorites();
-//    }
+    @Then("^пользователь видит товар в избранном$")
+    public void userLooksFavorites() {
+        new LoginPage().chekFavorites();
+    }
 }
